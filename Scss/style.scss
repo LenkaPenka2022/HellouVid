@@ -1,0 +1,60 @@
+//обнуление
+@import "_nullstyle";
+//размер шрифта
+$fz: 80px;
+//цвет
+$color_1: red;
+$color_2: rgb(81, 255, 0);
+$color_3: rgb(243, 12, 224);
+//пунктирное подчеркивание (шаблон №1)
+%tplborder{
+   border-bottom: 5px dashed red;
+}
+//переменная размера шрифта(можно менять)
+@mixin fontz ($fz)
+{
+   font-size:$fz ;
+};
+   
+
+h1{
+   font-size: 50px;
+   color: $color_2;
+   &:hover{
+      color: rgb(9, 120, 246);
+      text-decoration: dotted;
+   }
+   @extend %tplborder;
+}
+.block{
+   width: 300px / 960px * 100%;
+   background-color: #666;
+   .block--dig{
+      color: rgb(252, 11, 11);
+      font-size: $fz;
+   }
+   .block__text{
+      font-size: $fz;
+      color: rgb(11, 46, 245);
+
+   }
+   .link{
+      font-size: $fz;
+      color: rgb(116, 6, 243);
+   }
+         .link-2{
+            @extend %tplborder;
+            @include fontz(60px);
+            font-size: 40px;
+         }
+         .block {
+            font-size: $fz;
+         }
+      }
+     
+   
+   
+
+
+
+
